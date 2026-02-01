@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create New Job</title>
-</head>
+@section('title')
+    Create Job
+@endsection
 
-<body>
+@section('content')
     <h1>Create New Job</h1>
     <form action="/jobs" method="POST">
         @csrf
@@ -18,6 +15,5 @@
         <textarea id="description" name="description" required></textarea>
         <br><br>
         <button type="submit">Create Job</button>
-</body>
-
-</html>
+    </form>
+@endsection
