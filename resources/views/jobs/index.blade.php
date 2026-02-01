@@ -8,13 +8,15 @@
 </head>
 
 <body>
-    <h1>Job Listings Page</h1>
-    <ul>
-        <li>Web Developer</li>
-        <li>Database Admin</li>
-        <li>Software Engineer</li>
-        <li>Systems Analyst</li>
-    </ul>
+    <h1>{{ $title }}</h1>
+    @forelse($jobs as $job)
+        <li>
+            {{ $job }}
+        </li>
+    @empty
+        <p>No jobs available at the moment.</p>
+    @endforelse
+
 </body>
 
 </html>
