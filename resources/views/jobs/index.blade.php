@@ -3,7 +3,7 @@
     <ul>
         @forelse($jobs as $job)
             <li>
-                {{ $job }}
+                {{ $job->title }} - {{ $job->description }}
             </li>
         @empty
             <p>No jobs available at the moment.</p>
