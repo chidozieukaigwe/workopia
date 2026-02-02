@@ -1,10 +1,5 @@
-@extends('layout')
-
-@section('title')
-    Create Job
-@endsection
-
-@section('content')
+<x-layout>
+    <x-slot name="title">Create Job</x-slot>
     <h1>Create New Job</h1>
     <form action="/jobs" method="POST">
         @csrf
@@ -16,4 +11,4 @@
         <br><br>
         <button type="submit">Create Job</button>
     </form>
-@endsection
+</x-layout>

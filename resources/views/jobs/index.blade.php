@@ -1,5 +1,4 @@
-@extends('layout')
-@section('content')
+<x-layout>
     <h1>Available Jobs</h1>
     <ul>
         @forelse($jobs as $job)
@@ -10,5 +9,4 @@
             <p>No jobs available at the moment.</p>
         @endforelse
     </ul>
-
-@endsection
+</x-layout>
