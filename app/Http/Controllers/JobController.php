@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
@@ -35,7 +36,6 @@ class JobController extends Controller
     public function store(Request $request): RedirectResponse
     {
 
-        
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
@@ -58,8 +58,7 @@ class JobController extends Controller
         ]);
 
 
-        // Hardcoded user ID
-        $validatedData['user_id'] = 1;
+        $validatedData['user_id'] = Auth::user()->id;
 
         // Check for image 
         if($request->hasFile('company_logo')){
